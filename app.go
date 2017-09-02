@@ -3,11 +3,13 @@ package main
 import (
 	"fmt"
 	"database/sql"
+
+	"github.com/gorilla/mux"
 	_ "github.com/mattn/go-sqlite3"
 )
 
 type App struct {
-//	Router	*mux.Router
+	Router	*mux.Router
 	DB		*sql.DB
 }
 
