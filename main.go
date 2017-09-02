@@ -2,12 +2,12 @@ package main
 
 import (
 	"fmt"
-//	"os"
+	//	"os"
 )
 
 func main() {
 	a := App{}
-	a.Initialize("user", "pass", "test")
+	fmt.Println("Starting...")
+	a.Initialize("user", "pass", "test.db")
 	a.Run(":8080")
-	fmt.Println("Test")
 }
