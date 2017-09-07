@@ -5,17 +5,18 @@ import (
 )
 
 type movie struct {
-	ID       int    `json:"id"`
-	Title    string `json:"title"`
-	Plot     string `json:"plot"`
-	Year     int    `json:"year"`
-	Genre    string `json:"genre"`
-	Rating   int    `json:"rating"`
+	ID     int    `json:"id"`
+	ImdbID int    `json:"imdb_id"`
+	Title  string `json:"title"`
+	Plot   string `json:"plot"`
+	Year   int    `json:"year"`
+	Genre  string `json:"genre"`
+	Rating int    `json:"rating"`
 
 	// user specified data
-	USummary string `json:"usummary"`
-	URating  int    `json:"urating"`
-	USeen    bool   `json:"useen"`
+	UserSummary string `json:"user_summary"`
+	UserRating  int    `json:"user_rating"`
+	UserSeen    bool   `json:"user_seen"`
 }
 
 func (m *movie) getMovie(db *sql.DB) error {
