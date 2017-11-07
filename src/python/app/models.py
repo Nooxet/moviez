@@ -55,6 +55,15 @@ class Movie(db.Model, DBModel):
     def __repr__(self):
         return "Movie: {}".format(self.title)
 
+    @property
+    def serialize(self):
+        ''' Serializes the Movie object into a JSON object '''
+        return {
+                'id'        : self.id,
+                'imdb_id'   : self.imdb_id,
+                'title'     : self.title,
+                }
+
 
 class Genre(db.Model, DBModel):
 

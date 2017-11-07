@@ -1,17 +1,15 @@
 from app import app, models
+from flask import jsonify
 
 @app.route('/')
 def index():
-    # get all actors for the movie
-    m = models.Movie.query.get(1)
-    print (m)
-    print ([i for i in m.actors])
+    return "This is no place for someone like you..."
 
-    # get all movies for the actor
-    a = models.Actor.query.get(2)
-    print ("Actor", a)
-    print ([i for i in a.movies])
-    return "Got"
+@app.route('/movies')
+def get_movies():
+    ''' Returns a list of all movies '''
+    movies = models.Movie.query.all()
+    return jsonify([m.serialize for m in movies])
 
 @app.route('/add')
 def add():
